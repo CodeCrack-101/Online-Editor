@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Code <span>-Craft</span></h1>
+      <ul>
+        <li>
+          Docs
+          <lord-icon
+            src="https://cdn.lordicon.com/fjvfsqea.json"
+            trigger="hover"
+            stroke="light"
+            style="
+              width: 27px;
+              height: 24px;
+              vertical-align: middle;
+              margin-left: 10px;
+            "
+          >
+          </lord-icon>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="bg1">
+     <div class="bg">
+        <h1>Welcome To Code-Craft</h1>
+        <p data-aos="slide-up" data-aos-id="super-duper">
+          Code-Craft is a fast and user-friendly online compiler designed for
+          writing,
+        </p>
+        <p id="more" style="display: none">
+          testing, and previewing HTML, CSS, and JavaScript code in real-time.
+          Whether you're a beginner learning the basics or a developer prototyping
+          ideas, Code-Craft offers a smooth, distraction-free environment to
+          experiment and  web designs—all in one place, with
+          instant results.
+        </p>
+  
+        <button data-aos="slide-up" data-aos-id="super-duper" id="readMoreBtn">Read More</button>
+        <button data-aos="slide-up" data-aos-id="super-duper" id="readLessBtn" style="display: none">Read Less</button>
+     </div>
+      <div class="img">
+        <img data-aos="slide-up" data-aos-id="super-duper" src="bg.jpg" alt="">
+      </div>
+    </div>
+    <section class="services">
+        <h2>Features?</h2>
+        <p class="subtitle">Secure your Code with Code-Craft</p>
+      
+        <div class="service-cards">
+          <div class="card highlighted" data-aos="slide-right" data-aos-id="super-duper">
+            <h3>Live Code Editor</h3>
+            <p>Write and preview HTML, CSS, and JavaScript in real-time with instant results in a distraction-free environment.</p>
+          </div>
+      
+          <div class="card" data-aos="slide-up" data-aos-id="super-duper">
+            <h3>Auto Save & History</h3>
+            <p>Your code is automatically saved. You can revisit or restore older versions anytime without losing progress.</p>
+          </div>
+      
+          <div class="card" data-aos="slide-left" data-aos-id="super-duper">
+            <h3>Responsive Preview</h3>
+            <p>Test how your designs look on various screen sizes to ensure a consistent experience across devices.</p>
+          </div>
+        </div>
+      </section>
+      
+    
+      <!-- Section 2: Feature & Form -->
+      <section class="monitor">
+        <div class="monitor-text">
+            <h2>Code, Compile & Monitor in Real-Time</h2>
+            <p>Access live previews, instant error alerts, and performance insights—right from your browser, anytime, anywhere.</p>
+            
+            <button class="explore-btn" onclick="location.href='editor.html'" data-aos="slide-up" data-aos-id="super-duper">
+                Editor
+                <lord-icon
+                  src="https://cdn.lordicon.com/bsdkzyjd.json"
+                  trigger="hover"
+                  stroke="light"
+                  style="width:24px;height:24px;margin-left:10px;vertical-align:middle;">
+                </lord-icon>
+              </button>              
+        </div>
+<!--     
+        <div class="monitor-image">
+          <img src="b.png" alt="Security Camera" />
+        </div> -->
+    
+        <div class="consultation-form">
+          <h3>Speak to a Consultant</h3>
+          <form data-aos="slide-up" data-aos-id="super-duper">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="4"></textarea>
+            <button type="submit" class="submit-btn">
+                Submit
+                <lord-icon
+                  src="https://cdn.lordicon.com/vpbspaec.json"
+                  trigger="hover"
+                  stroke="light"
+                  style="width:24px;height:24px;margin-left:10px;vertical-align:middle;">
+                </lord-icon>
+              </button>
+              
+          </form>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer-content">
+          <h2>Code<span>-Craft</span></h2>      
+          <br class="copyright">© 2025 Code-Craft. All rights reserved.</br>
+          Designed by : khan Obiad</p>
+        </div>
+      </footer>
+      
+    <script>
+      const moreText = document.getElementById("more");
+      const readMoreBtn = document.getElementById("readMoreBtn");
+      const readLessBtn = document.getElementById("readLessBtn");
+
+      readMoreBtn.onclick = function () {
+        moreText.style.display = "inline";
+        readMoreBtn.style.display = "none";
+        readLessBtn.style.display = "inline";
+      };
+
+      readLessBtn.onclick = function () {
+        moreText.style.display = "none";
+        readMoreBtn.style.display = "inline";
+        readLessBtn.style.display = "none";
+      };
+    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 2000,
+                offset: 40,
+            });
+        </script>
+  </body>
+</html>
