@@ -69,6 +69,7 @@ textarea {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  margin-top: -300px;
 }
 
 .output label {
@@ -93,6 +94,44 @@ iframe {
   }
 }
 
+.btn {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      min-height: 100vh;
+      margin-top: -300px;
+    }
+
+    .btn button {
+      background-color: #fff;
+      border: 2px solid #000;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 0px #000;
+    }
+
+ 
+
+
+    @media (max-width: 500px) {
+      .btn {
+        flex-direction: column;
+      }
+
+      .btn button {
+        width: 90%;
+        justify-content: center;
+      }
+    }
   </style>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.lordicon.com/lordicon.js"></script>
@@ -130,20 +169,45 @@ iframe {
   <div class="container">
     <div class="tags">
       <div class="html">
-        <label style="display: flex; align-items: center; gap: 8px;">
-    HTML
-          </label>
-</lord-icon>
-        <textarea onkeyup="run()"></textarea>
+        <label style="display: flex; align-items: center; gap: 8px;">HTML </label>
+       
+    <textarea onkeyup="run()"></textarea>
       </div>
       <div class="Css">
         <label>CSS</label>
-        <textarea onkeyup="run()"></textarea>
+         <textarea onkeyup="run()"></textarea>
       </div>
       <div class="JS">
-        <label>JS</label>
+        <label>JS</label>  
         <textarea onkeyup="run()"></textarea>
       </div>
+    </div>
+    
+    <div class="btn">
+      <button onclick="downloadCode('html')">HTML
+        <lord-icon
+        src="https://cdn.lordicon.com/jectmwqf.json"
+        trigger="hover"
+        state="hover-squeeze"
+        style="width: 32px; height: 32px;">
+      </lord-icon>
+      </button>
+      <button onclick="downloadCode('css')">CSS
+        <lord-icon
+        src="https://cdn.lordicon.com/jectmwqf.json"
+        trigger="hover"
+        state="hover-squeeze"
+        style="width: 32px; height: 32px;">
+      </lord-icon>
+      </button>
+      <button onclick="downloadCode('js')">JS
+        <lord-icon
+        src="https://cdn.lordicon.com/jectmwqf.json"
+        trigger="hover"
+        state="hover-squeeze"
+        style="width: 32px; height: 32px;">
+      </lord-icon>
+      </button>
     </div>
     <div class="output">
       <label>OUTPUT</label>
@@ -161,6 +225,30 @@ iframe {
       output.contentDocument.body.innerHTML = html + "<style>" + css + "</style>";
       output.contentWindow.eval(js);
     }
+
+    function downloadCode(type) {
+  let code = "";
+  let filename = "";
+
+  if (type === "html") {
+    code = document.querySelector(".html textarea").value;
+    filename = "code.html";
+  } else if (type === "css") {
+    code = document.querySelector(".Css textarea").value;
+    filename = "style.css";
+  } else if (type === "js") {
+    code = document.querySelector(".JS textarea").value;
+    filename = "script.js";
+  }
+
+  const blob = new Blob([code], { type: "text/plain" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+}
+
   </script>
 </body>
 </html>
